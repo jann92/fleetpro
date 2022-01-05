@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SERVERDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="WebServers">
+    <Key>
+      <PropertyRef Name="web_server_id" />
+    </Key>
+    <Property Name="web_server_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="url" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="code" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="config_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="default_coordinates" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="downloads_url" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="images_url" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="WebServerConfiguration" Relationship="Self.FK__WebServer__web_s__0519C6AF" FromRole="WebServers" ToRole="WebServerConfiguration" />
+    <NavigationProperty Name="WebServerConfiguration1" Relationship="Self.FK__WebServer__web_s__145C0A3F" FromRole="WebServers" ToRole="WebServerConfiguration" />
+  </EntityType>
+  <EntityType Name="WebServerConfiguration">
+    <Key>
+      <PropertyRef Name="web_server_configuration_id" />
+    </Key>
+    <Property Name="web_server_configuration_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="web_server_id" Type="Int32" />
+    <Property Name="config_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="database_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="web_config_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="WebServers" Relationship="Self.FK__WebServer__web_s__0519C6AF" FromRole="WebServerConfiguration" ToRole="WebServers" />
+    <NavigationProperty Name="WebServers1" Relationship="Self.FK__WebServer__web_s__145C0A3F" FromRole="WebServerConfiguration" ToRole="WebServers" />
+  </EntityType>
+  <Association Name="FK__WebServer__web_s__0519C6AF">
+    <End Role="WebServers" Type="Self.WebServers" Multiplicity="0..1" />
+    <End Role="WebServerConfiguration" Type="Self.WebServerConfiguration" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WebServers">
+        <PropertyRef Name="web_server_id" />
+      </Principal>
+      <Dependent Role="WebServerConfiguration">
+        <PropertyRef Name="web_server_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__WebServer__web_s__145C0A3F">
+    <End Role="WebServers" Type="Self.WebServers" Multiplicity="0..1" />
+    <End Role="WebServerConfiguration" Type="Self.WebServerConfiguration" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WebServers">
+        <PropertyRef Name="web_server_id" />
+      </Principal>
+      <Dependent Role="WebServerConfiguration">
+        <PropertyRef Name="web_server_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="SERVERDBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="WebServers" EntityType="Self.WebServers" />
+    <EntitySet Name="WebServerConfiguration" EntityType="Self.WebServerConfiguration" />
+    <AssociationSet Name="FK__WebServer__web_s__0519C6AF" Association="Self.FK__WebServer__web_s__0519C6AF">
+      <End Role="WebServers" EntitySet="WebServers" />
+      <End Role="WebServerConfiguration" EntitySet="WebServerConfiguration" />
+    </AssociationSet>
+    <AssociationSet Name="FK__WebServer__web_s__145C0A3F" Association="Self.FK__WebServer__web_s__145C0A3F">
+      <End Role="WebServers" EntitySet="WebServers" />
+      <End Role="WebServerConfiguration" EntitySet="WebServerConfiguration" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

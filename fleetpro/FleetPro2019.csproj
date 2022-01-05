@@ -1,0 +1,470 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F779FF5B-1241-434A-B9D2-E6BC75D23674}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FleetPro2019</RootNamespace>
+    <AssemblyName>FleetPro2019</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Agent.Intercept, Version=2.0.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.2.0.6\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.2.0\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.2.0\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.2.0\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.2.0\lib\net45\Microsoft.AI.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.2.0\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.2.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Owin, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Cors, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Cors.3.0.1\lib\net45\Microsoft.Owin.Cors.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.3.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.3.0.1\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.3.0.1\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.3.0.1\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.11.0.2\lib\net20\Microsoft.SqlServer.Types.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.WebRequest" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.Cors, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Cors.5.0.0\lib\net45\System.Web.Cors.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="..\packages\Microsoft.SqlServer.Types.11.0.2\nativeBinaries\x64\msvcr100.dll">
+      <Link>SqlServerTypes\x64\msvcr100.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\packages\Microsoft.SqlServer.Types.11.0.2\nativeBinaries\x64\SqlServerSpatial110.dll">
+      <Link>SqlServerTypes\x64\SqlServerSpatial110.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\packages\Microsoft.SqlServer.Types.11.0.2\nativeBinaries\x86\msvcr100.dll">
+      <Link>SqlServerTypes\x86\msvcr100.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\packages\Microsoft.SqlServer.Types.11.0.2\nativeBinaries\x86\SqlServerSpatial110.dll">
+      <Link>SqlServerTypes\x86\SqlServerSpatial110.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="contents\fonts\fontawesome-webfont.svg" />
+    <Content Include="contents\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="contents\images\fleetpro.svg" />
+    <Content Include="contents\images\login\Cloud.svg" />
+    <Content Include="contents\images\login\fleetpro.svg" />
+    <Content Include="contents\images\login\gbklogowhite.png" />
+    <Content Include="contents\images\login\login_asset_animated.svg" />
+    <Content Include="contents\images\login\login_truck_animated %282%29.svg" />
+    <Content Include="contents\images\login\login_truck_animated.svg" />
+    <Content Include="contents\images\login\Satellite.svg" />
+    <Content Include="contents\images\login\trackpro_logo.png" />
+    <Content Include="contents\images\login\trackpro_new.png" />
+    <Content Include="contents\images\login\trackpro_s.png" />
+    <Content Include="contents\images\login\Truck-100x100.svg" />
+    <Content Include="contents\images\products\dhl.png" />
+    <Content Include="contents\images\products\fleetadmin.png" />
+    <Content Include="contents\images\products\bkb.png" />
+    <Content Include="contents\images\products\campro.png" />
+    <Content Include="contents\images\products\deliverypro.png" />
+    <Content Include="contents\images\products\fleetpro.jpg" />
+    <Content Include="contents\images\products\fleetpro.png" />
+    <Content Include="contents\images\products\insightpro.png" />
+    <Content Include="contents\images\products\maintenancepro.png" />
+    <Content Include="contents\images\products\reportpro.png" />
+    <Content Include="contents\images\products\sensepro.png" />
+    <Content Include="contents\images\products\vesselpro.png" />
+    <Content Include="contents\styles\angularjs\loading-bar.css" />
+    <Content Include="contents\styles\bootstrap\bootstrap-theme.css" />
+    <Content Include="contents\styles\bootstrap\bootstrap-theme.min.css" />
+    <Content Include="contents\styles\bootstrap\bootstrap.css" />
+    <Content Include="contents\styles\bootstrap\bootstrap.min.css" />
+    <Content Include="contents\styles\common.css" />
+    <Content Include="contents\styles\fontawesome\fa-brands.css" />
+    <Content Include="contents\styles\fontawesome\fa-brands.min.css" />
+    <Content Include="contents\styles\fontawesome\fa-regular.css" />
+    <Content Include="contents\styles\fontawesome\fa-regular.min.css" />
+    <Content Include="contents\styles\fontawesome\fa-solid.css" />
+    <Content Include="contents\styles\fontawesome\fa-solid.min.css" />
+    <Content Include="contents\styles\fontawesome\font-awesome.css" />
+    <Content Include="contents\styles\fontawesome\font-awesome.min.css" />
+    <Content Include="contents\styles\fontawesome\fontawesome-all.css" />
+    <Content Include="contents\styles\fontawesome\fontawesome-all.min.css" />
+    <Content Include="contents\styles\fontawesome\fontawesome.css" />
+    <Content Include="contents\styles\fontawesome\fontawesome.min.css" />
+    <Content Include="contents\styles\login\login-card.css" />
+    <Content Include="contents\styles\login\login-new.css" />
+    <Content Include="contents\styles\login\login.css" />
+    <Content Include="contents\styles\login\logs.css" />
+    <Content Include="contents\styles\pgps-icons\css\pgps-function-items.css" />
+    <Content Include="contents\styles\pgps-icons\fonts\pgps-function-items.svg" />
+    <Content Include="contents\styles\pgps-icons\fonts\trackpro.svg" />
+    <Content Include="contents\styles\track\home.css" />
+    <Content Include="DAL\SERVERDB.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SERVERDB.edmx</DependentUpon>
+      <LastGenOutput>SERVERDB.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="DAL\SERVERDB.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SERVERDB.edmx</DependentUpon>
+      <LastGenOutput>SERVERDB.cs</LastGenOutput>
+    </Content>
+    <Content Include="DAL\TFDB.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>TFDB.edmx</DependentUpon>
+      <LastGenOutput>TFDB.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="DAL\TFDB.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>TFDB.edmx</DependentUpon>
+      <LastGenOutput>TFDB.cs</LastGenOutput>
+    </Content>
+    <Content Include="Global.asax" />
+    <Content Include="Index.html" />
+    <Content Include="login\index.html" />
+    <Content Include="scripts\controllers\home-controller.js" />
+    <Content Include="scripts\controllers\login-controller.js" />
+    <Content Include="scripts\factories\login-factory.js" />
+    <Content Include="scripts\helpers\DateTimeHelper.js" />
+    <Content Include="scripts\helpers\DownloadHelper.js" />
+    <Content Include="scripts\helpers\mapHelper.js" />
+    <Content Include="scripts\helpers\StringHelpers.js" />
+    <Content Include="scripts\js-libs\angularjs\angular-animate.js" />
+    <Content Include="scripts\js-libs\angularjs\angular-animate.min.js" />
+    <Content Include="scripts\js-libs\angularjs\angular-aria.js" />
+    <Content Include="scripts\js-libs\angularjs\angular-aria.min.js" />
+    <Content Include="scripts\js-libs\angularjs\angular-filter.min.js" />
+    <Content Include="scripts\js-libs\angularjs\angular-local-storage.js" />
+    <Content Include="scripts\js-libs\angularjs\angular-mocks.js" />
+    <Content Include="scripts\js-libs\angularjs\angular-resource.js" />
+    <Content Include="scripts\js-libs\angularjs\angular-resource.min.js" />
+    <Content Include="scripts\js-libs\angularjs\angular-route.js" />
+    <Content Include="scripts\js-libs\angularjs\angular-route.min.js" />
+    <Content Include="scripts\js-libs\angularjs\angular-sanitize.js" />
+    <Content Include="scripts\js-libs\angularjs\angular-sanitize.min.js" />
+    <Content Include="scripts\js-libs\angularjs\angular-tablescroll.js" />
+    <Content Include="scripts\js-libs\angularjs\angular-touch.min.js" />
+    <Content Include="scripts\js-libs\angularjs\angular.js" />
+    <Content Include="scripts\js-libs\angularjs\angular.min.js" />
+    <Content Include="scripts\js-libs\angularjs\angularjs-datetime-picker.min.js" />
+    <Content Include="scripts\js-libs\angularjs\loading-bar.js" />
+    <Content Include="scripts\js-libs\angularjs\ng-csv.js" />
+    <Content Include="scripts\js-libs\angularjs\ng-csv.min.js" />
+    <Content Include="scripts\js-libs\angularjs\ng-infinite-scroll.min.js" />
+    <Content Include="scripts\js-libs\angularjs\ngStorage.js" />
+    <Content Include="scripts\js-libs\angularjs\ui-bootstrap-tpls-1.3.2.min.js" />
+    <Content Include="scripts\js-libs\jquery\flexslider\angular-flexslider.js" />
+    <Content Include="scripts\js-libs\jquery\flexslider\flexslider.css" />
+    <Content Include="scripts\js-libs\jquery\flexslider\fonts\flexslider-icon.svg" />
+    <Content Include="scripts\js-libs\jquery\flexslider\images\bg_play_pause.png" />
+    <Content Include="scripts\js-libs\jquery\flexslider\jquery.flexslider-min.js" />
+    <Content Include="scripts\js-libs\jquery\flexslider\jquery.flexslider.js" />
+    <Content Include="scripts\js-libs\jquery\jquery-2.2.3.js" />
+    <Content Include="scripts\js-libs\jquery\jquery-2.2.3.min.js" />
+    <Content Include="scripts\js-libs\jquery\jquery.stickytableheaders.js" />
+    <Content Include="scripts\js-libs\parsley\parsley.js" />
+    <Content Include="scripts\js-libs\parsley\parsley.min.js" />
+    <Content Include="scripts\modules\home-module.js" />
+    <Content Include="scripts\modules\login-module.js" />
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ServerController.cs" />
+    <Compile Include="DAL\PGPS_Application.cs">
+      <DependentUpon>TFDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\PGPS_ApplicationModule.cs">
+      <DependentUpon>TFDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\PGPS_Module.cs">
+      <DependentUpon>TFDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\PGPS_SystemUser.cs">
+      <DependentUpon>TFDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\PGPS_UserLogs.cs">
+      <DependentUpon>TFDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\SERVERDB.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SERVERDB.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\SERVERDB.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SERVERDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\SERVERDB.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SERVERDB.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\sp_PGPS_get_roles_list_Result.cs">
+      <DependentUpon>TFDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\TFDB.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TFDB.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\TFDB.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TFDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\TFDB.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TFDB.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\WebServerConfiguration.cs">
+      <DependentUpon>SERVERDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\WebServers.cs">
+      <DependentUpon>SERVERDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\Converter.cs" />
+    <Compile Include="Helpers\PhilgpsAuthorizationProvider.cs" />
+    <Compile Include="Helpers\PhilgpsUserRepository.cs" />
+    <Compile Include="Helpers\SERVERDB\SERVERDBHelper.cs" />
+    <Compile Include="Models\Account.cs" />
+    <Compile Include="Models\Server.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="Startup.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <EntityDeploy Include="DAL\TFDB.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>TFDB.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="DAL\TFDB.edmx.diagram">
+      <DependentUpon>TFDB.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="DAL\SERVERDB.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>SERVERDB.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="DAL\SERVERDB.edmx.diagram">
+      <DependentUpon>SERVERDB.edmx</DependentUpon>
+    </Content>
+    <Content Include="contents\fonts\fontawesome-webfont.eot" />
+    <Content Include="contents\fonts\fontawesome-webfont.ttf" />
+    <Content Include="contents\fonts\fontawesome-webfont.woff" />
+    <Content Include="contents\fonts\fontawesome-webfont.woff2" />
+    <Content Include="contents\fonts\FontAwesome.otf" />
+    <Content Include="contents\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="contents\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="contents\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="contents\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="contents\styles\pgps-icons\css.zip" />
+    <Content Include="contents\styles\pgps-icons\fonts.zip" />
+    <Content Include="contents\styles\pgps-icons\fonts\pgps-function-items.eot" />
+    <Content Include="contents\styles\pgps-icons\fonts\pgps-function-items.ttf" />
+    <Content Include="contents\styles\pgps-icons\fonts\pgps-function-items.woff" />
+    <Content Include="contents\styles\pgps-icons\fonts\trackpro.eot" />
+    <Content Include="contents\styles\pgps-icons\fonts\trackpro.ttf" />
+    <Content Include="contents\styles\pgps-icons\fonts\trackpro.woff" />
+    <Content Include="scripts\js-libs\angularjs\angular-aria.min.js.map" />
+    <Content Include="scripts\js-libs\angularjs\angular-resource.min.js.map" />
+    <Content Include="scripts\js-libs\angularjs\angular-route.min.js.map" />
+    <Content Include="scripts\js-libs\angularjs\angular-sanitize.min.js.map" />
+    <Content Include="scripts\js-libs\angularjs\angular.min.js.map" />
+    <Content Include="scripts\js-libs\jquery\flexslider\flexslider.less" />
+    <Content Include="scripts\js-libs\jquery\flexslider\fonts\flexslider-icon.eot" />
+    <Content Include="scripts\js-libs\jquery\flexslider\fonts\flexslider-icon.ttf" />
+    <Content Include="scripts\js-libs\jquery\flexslider\fonts\flexslider-icon.woff" />
+    <Content Include="scripts\js-libs\parsley\parsley.js.map" />
+    <Content Include="scripts\js-libs\parsley\parsley.min.js.map" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>63226</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:63226/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

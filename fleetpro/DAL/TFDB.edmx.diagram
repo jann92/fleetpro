@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="b02970709c1b4e99a1886316f53551d3" Name="Diagram1" ZoomLevel="90">
+        <EntityTypeShape EntityType="TFDBModel.PGPS_Application" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TFDBModel.PGPS_ApplicationModule" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TFDBModel.PGPS_Module" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TFDBModel.PGPS_SystemUser" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="TFDBModel.FK__PGPS_Syst__paren__4C0608EE" ManuallyRouted="false" />
+        <AssociationConnector Association="TFDBModel.FK__PGPS_Syst__paren__4EE27599" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="TFDBModel.PGPS_UserLogs" Width="1.5" PointX="5.375" PointY="3.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
