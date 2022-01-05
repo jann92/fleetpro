@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="TFDBModelStoreContainer" CdmEntityContainer="TFDBEntities">
+    <EntitySetMapping Name="PGPS_Application">
+      <EntityTypeMapping TypeName="TFDBModel.PGPS_Application">
+        <MappingFragment StoreEntitySet="PGPS_Application">
+          <ScalarProperty Name="application_id" ColumnName="application_id" />
+          <ScalarProperty Name="project_name" ColumnName="project_name" />
+          <ScalarProperty Name="project_code" ColumnName="project_code" />
+          <ScalarProperty Name="last_version" ColumnName="last_version" />
+          <ScalarProperty Name="last_version_date_time" ColumnName="last_version_date_time" />
+          <ScalarProperty Name="description" ColumnName="description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PGPS_ApplicationModule">
+      <EntityTypeMapping TypeName="TFDBModel.PGPS_ApplicationModule">
+        <MappingFragment StoreEntitySet="PGPS_ApplicationModule">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="application_id" ColumnName="application_id" />
+          <ScalarProperty Name="module_id" ColumnName="module_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PGPS_Module">
+      <EntityTypeMapping TypeName="TFDBModel.PGPS_Module">
+        <MappingFragment StoreEntitySet="PGPS_Module">
+          <ScalarProperty Name="module_id" ColumnName="module_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="value" ColumnName="value" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PGPS_SystemUser">
+      <EntityTypeMapping TypeName="TFDBModel.PGPS_SystemUser">
+        <MappingFragment StoreEntitySet="PGPS_SystemUser">
+          <ScalarProperty Name="last_login_time" ColumnName="last_login_time" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="encrypted_password" ColumnName="encrypted_password" />
+          <ScalarProperty Name="created_time" ColumnName="created_time" />
+          <ScalarProperty Name="remarks" ColumnName="remarks" />
+          <ScalarProperty Name="enabled" ColumnName="enabled" />
+          <ScalarProperty Name="api_key" ColumnName="api_key" />
+          <ScalarProperty Name="api_status" ColumnName="api_status" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="last_update_time" ColumnName="last_update_time" />
+          <ScalarProperty Name="create_role_value" ColumnName="create_role_value" />
+          <ScalarProperty Name="read_role_value" ColumnName="read_role_value" />
+          <ScalarProperty Name="update_role_value" ColumnName="update_role_value" />
+          <ScalarProperty Name="delete_role_value" ColumnName="delete_role_value" />
+          <ScalarProperty Name="parent_user_id" ColumnName="parent_user_id" />
+          <ScalarProperty Name="GroupCode" ColumnName="GroupCode" />
+          <ScalarProperty Name="Sensor1Label" ColumnName="Sensor1Label" />
+          <ScalarProperty Name="Sensor2Label" ColumnName="Sensor2Label" />
+          <ScalarProperty Name="alert" ColumnName="alert" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_PGPS_get_roles_list" FunctionName="TFDBModel.Store.sp_PGPS_get_roles_list">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TFDBModel.sp_PGPS_get_roles_list_Result">
+          <ScalarProperty Name="ModuleID" ColumnName="ModuleID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="PGPS_UserLogs">
+      <EntityTypeMapping TypeName="TFDBModel.PGPS_UserLogs">
+        <MappingFragment StoreEntitySet="PGPS_UserLogs">
+          <ScalarProperty Name="ip" ColumnName="ip" />
+          <ScalarProperty Name="app" ColumnName="app" />
+          <ScalarProperty Name="log_type" ColumnName="log_type" />
+          <ScalarProperty Name="log_time" ColumnName="log_time" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="log_id" ColumnName="log_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

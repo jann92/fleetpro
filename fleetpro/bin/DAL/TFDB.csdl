@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TFDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="PGPS_Application">
+    <Key>
+      <PropertyRef Name="application_id" />
+    </Key>
+    <Property Name="application_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="project_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="project_code" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="last_version" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="last_version_date_time" Type="DateTime" Precision="3" />
+    <Property Name="description" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="PGPS_ApplicationModule">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="application_id" Type="Int32" />
+    <Property Name="module_id" Type="Int32" />
+  </EntityType>
+  <EntityType Name="PGPS_Module">
+    <Key>
+      <PropertyRef Name="module_id" />
+    </Key>
+    <Property Name="module_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="value" Type="Int32" />
+  </EntityType>
+  <EntityType Name="PGPS_SystemUser">
+    <Key>
+      <PropertyRef Name="user_id" />
+    </Key>
+    <Property Name="user_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="password" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="encrypted_password" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="created_time" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="remarks" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="enabled" Type="Boolean" Nullable="false" />
+    <Property Name="api_key" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="api_status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="last_update_time" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="create_role_value" Type="Int32" />
+    <Property Name="read_role_value" Type="Int32" />
+    <Property Name="update_role_value" Type="Int32" />
+    <Property Name="delete_role_value" Type="Int32" />
+    <Property Name="parent_user_id" Type="Int32" />
+    <Property Name="GroupCode" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Sensor1Label" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="Sensor2Label" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="alert" Type="Boolean" />
+    <NavigationProperty Name="PGPS_SystemUser1" Relationship="Self.FK__PGPS_Syst__paren__4C0608EE" FromRole="PGPS_SystemUser" ToRole="PGPS_SystemUser1" />
+    <NavigationProperty Name="PGPS_SystemUser2" Relationship="Self.FK__PGPS_Syst__paren__4C0608EE" FromRole="PGPS_SystemUser1" ToRole="PGPS_SystemUser" />
+    <NavigationProperty Name="PGPS_SystemUser11" Relationship="Self.FK__PGPS_Syst__paren__4EE27599" FromRole="PGPS_SystemUser" ToRole="PGPS_SystemUser1" />
+    <NavigationProperty Name="PGPS_SystemUser3" Relationship="Self.FK__PGPS_Syst__paren__4EE27599" FromRole="PGPS_SystemUser1" ToRole="PGPS_SystemUser" />
+    <Property Name="last_login_time" Type="DateTime" Precision="3" />
+  </EntityType>
+  <Association Name="FK__PGPS_Syst__paren__4C0608EE">
+    <End Role="PGPS_SystemUser" Type="Self.PGPS_SystemUser" Multiplicity="0..1" />
+    <End Role="PGPS_SystemUser1" Type="Self.PGPS_SystemUser" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PGPS_SystemUser">
+        <PropertyRef Name="user_id" />
+      </Principal>
+      <Dependent Role="PGPS_SystemUser1">
+        <PropertyRef Name="parent_user_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__PGPS_Syst__paren__4EE27599">
+    <End Role="PGPS_SystemUser" Type="Self.PGPS_SystemUser" Multiplicity="0..1" />
+    <End Role="PGPS_SystemUser1" Type="Self.PGPS_SystemUser" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PGPS_SystemUser">
+        <PropertyRef Name="user_id" />
+      </Principal>
+      <Dependent Role="PGPS_SystemUser1">
+        <PropertyRef Name="parent_user_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="TFDBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="PGPS_Application" EntityType="Self.PGPS_Application" />
+    <EntitySet Name="PGPS_ApplicationModule" EntityType="Self.PGPS_ApplicationModule" />
+    <EntitySet Name="PGPS_Module" EntityType="Self.PGPS_Module" />
+    <EntitySet Name="PGPS_SystemUser" EntityType="Self.PGPS_SystemUser" />
+    <AssociationSet Name="FK__PGPS_Syst__paren__4C0608EE" Association="Self.FK__PGPS_Syst__paren__4C0608EE">
+      <End Role="PGPS_SystemUser" EntitySet="PGPS_SystemUser" />
+      <End Role="PGPS_SystemUser1" EntitySet="PGPS_SystemUser" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PGPS_Syst__paren__4EE27599" Association="Self.FK__PGPS_Syst__paren__4EE27599">
+      <End Role="PGPS_SystemUser" EntitySet="PGPS_SystemUser" />
+      <End Role="PGPS_SystemUser1" EntitySet="PGPS_SystemUser" />
+    </AssociationSet>
+    <FunctionImport Name="sp_PGPS_get_roles_list" ReturnType="Collection(TFDBModel.sp_PGPS_get_roles_list_Result)">
+      <Parameter Name="rolevalue" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <EntitySet Name="PGPS_UserLogs" EntityType="TFDBModel.PGPS_UserLogs" />
+  </EntityContainer>
+  <ComplexType Name="sp_PGPS_get_roles_list_Result">
+    <Property Type="Int32" Name="ModuleID" Nullable="true" />
+    <Property Type="String" Name="Name" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="Value" Nullable="true" />
+    <Property Type="Boolean" Name="Active" Nullable="true" />
+  </ComplexType>
+  <EntityType Name="PGPS_UserLogs">
+    <Key>
+      <PropertyRef Name="log_id" />
+    </Key>
+    <Property Name="log_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="user_id" Type="Int32" />
+    <Property Name="log_time" Type="DateTime" Precision="3" />
+    <Property Name="log_type" Type="Boolean" />
+    <Property Name="app" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="ip" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+</Schema>

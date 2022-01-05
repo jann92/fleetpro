@@ -257,3 +257,4 @@ C:\Users\PHILGPS-JANN\Documents\_DEV\FLEETPRO2021\2022 Update jquery min js\flee
 C:\Users\PHILGPS-JANN\Documents\_DEV\FLEETPRO2021\2022 Update jquery min js\fleetpro\obj\Debug\FleetPro2019.csproj.CopyComplete
 C:\Users\PHILGPS-JANN\Documents\_DEV\FLEETPRO2021\2022 Update jquery min js\fleetpro\obj\Debug\FleetPro2019.dll
 C:\Users\PHILGPS-JANN\Documents\_DEV\FLEETPRO2021\2022 Update jquery min js\fleetpro\obj\Debug\FleetPro2019.pdb
+C:\Users\PHILGPS-JANN\Documents\_DEV\FLEETPRO2021\2022 Update jquery min js\fleetpro\bin\FleetPro2019.dll.config

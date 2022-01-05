@@ -18,11 +18,12 @@ namespace FleetPro2019.DAL
     
     public partial class TFDBEntities : DbContext
     {
-        public TFDBEntities(string entity)
-            : base("name="+entity)
+        public TFDBEntities(string _entity)
+             : base("name=" + _entity)
+
         {
         }
-    
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             throw new UnintentionalCodeFirstException();

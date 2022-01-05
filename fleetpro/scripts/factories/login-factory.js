@@ -22,7 +22,7 @@ app.factory('LoginFactory', ['$http', '$localStorage', '$filter', function ($htt
                 url: loginUrl,
                 data: formData,
                 header: headers('application/x-www-form-url-encoded')
-            }).success(success).error(error)
+            }).done(success).error(error)
 
         },
         getServerList: function () {

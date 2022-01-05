@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SERVERDBModelStoreContainer" CdmEntityContainer="SERVERDBEntities">
+    <EntitySetMapping Name="WebServers">
+      <EntityTypeMapping TypeName="SERVERDBModel.WebServers">
+        <MappingFragment StoreEntitySet="WebServers">
+          <ScalarProperty Name="web_server_id" ColumnName="web_server_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="url" ColumnName="url" />
+          <ScalarProperty Name="code" ColumnName="code" />
+          <ScalarProperty Name="config_name" ColumnName="config_name" />
+          <ScalarProperty Name="default_coordinates" ColumnName="default_coordinates" />
+          <ScalarProperty Name="downloads_url" ColumnName="downloads_url" />
+          <ScalarProperty Name="images_url" ColumnName="images_url" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WebServerConfiguration">
+      <EntityTypeMapping TypeName="SERVERDBModel.WebServerConfiguration">
+        <MappingFragment StoreEntitySet="WebServerConfiguration">
+          <ScalarProperty Name="web_server_configuration_id" ColumnName="web_server_configuration_id" />
+          <ScalarProperty Name="web_server_id" ColumnName="web_server_id" />
+          <ScalarProperty Name="config_name" ColumnName="config_name" />
+          <ScalarProperty Name="database_name" ColumnName="database_name" />
+          <ScalarProperty Name="web_config_name" ColumnName="web_config_name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

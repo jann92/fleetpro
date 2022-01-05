@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'E:\Lester Backup 2017-03-01\FleetPro 2019\FleetPro2019\FleetPro2019\DAL\SERVERDB.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\Users\PHILGPS-JANN\Documents\_DEV\FLEETPRO2021\2022 Update jquery min js\fleetpro\DAL\SERVERDB.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.
